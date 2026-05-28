@@ -80,16 +80,17 @@ document.querySelectorAll("img[data-fallback]").forEach((image) => {
   }
 });
 
-const cartButton = document.querySelector("[data-cart-button]");
+const cartButtons = document.querySelectorAll("[data-cart-button]");
 const cartNote = document.querySelector("[data-cart-note]");
 
-cartButton.addEventListener("click", () => {
-  if (!landingConfig.cartUrl) {
-    cartNote.textContent = landingConfig.cartMissingNote;
-    cartButton.focus();
-    return;
-  }
+cartButtons.forEach((cartButton) => {
+  cartButton.addEventListener("click", () => {
+    if (!landingConfig.cartUrl) {
+      if (cartNote) cartNote.textContent = landingConfig.cartMissingNote;
+      cartButton.focus();
+      return;
+    }
 
-  cartButton.textContent = landingConfig.cartRedirecting;
-  window.location.href = landingConfig.cartUrl;
+    window.location.href = landingConfig.cartUrl;
+  });
 });
