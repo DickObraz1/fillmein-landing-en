@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FILL ME IN | Editor textů</title>
+    <link rel="stylesheet" href="admin.css">
+  </head>
+  <body>
+    <main class="admin-shell">
+      <header class="admin-header">
+        <div>
+          <p class="eyebrow">Backend editor</p>
+          <h1>Texty landing page</h1>
+        </div>
+        <a class="preview-link" href="/" target="_blank" rel="noreferrer">Otevřít stránku</a>
+      </header>
+
+      <form class="editor-form" data-editor-form>
+        <section class="editor-section">
+          <h2>Hero</h2>
+          <label>Název stránky <input name="siteTitle"></label>
+          <label>Značka v hlavičce <input name="brand"></label>
+          <label>Eyebrow <input name="heroEyebrow"></label>
+          <label>Nadpis řádek 1 <input name="heroTitleLine1"></label>
+          <label>Nadpis řádek 2 <input name="heroTitleLine2"></label>
+          <label>Úvodní text <textarea name="heroLead" rows="4"></textarea></label>
+          <label>Popisek obálky <input name="coverCaption"></label>
+        </section>
+
+        <section class="editor-section">
+          <h2>Navigace a tlačítka</h2>
+          <label>Navigace: Uvnitř <input name="navInside"></label>
+          <label>Navigace: Ukázky <input name="navPreview"></label>
+          <label>Navigace: Koupit <input name="navBuy"></label>
+          <label>Primární CTA <input name="primaryCta"></label>
+          <label>Sekundární CTA <input name="secondaryCta"></label>
+        </section>
+
+        <section class="editor-section">
+          <h2>Obsah</h2>
+          <label>Eyebrow sekce <input name="insideEyebrow"></label>
+          <label>Nadpis sekce <textarea name="insideTitle" rows="3"></textarea></label>
+          <label>Box 1 nadpis <input name="feature1Title"></label>
+          <label>Box 1 text <textarea name="feature1Text" rows="3"></textarea></label>
+          <label>Box 2 nadpis <input name="feature2Title"></label>
+          <label>Box 2 text <textarea name="feature2Text" rows="3"></textarea></label>
+          <label>Box 3 nadpis <input name="feature3Title"></label>
+          <label>Box 3 text <textarea name="feature3Text" rows="3"></textarea></label>
+        </section>
+
+        <section class="editor-section">
+          <h2>Ukázky a ticker</h2>
+          <label>Eyebrow ukázek <input name="previewEyebrow"></label>
+          <label>Nadpis ukázek <textarea name="previewTitle" rows="3"></textarea></label>
+          <label>Ticker položky, každá na nový řádek <textarea name="tickerItems" rows="7"></textarea></label>
+        </section>
+
+        <section class="editor-section">
+          <h2>Košík</h2>
+          <label>Eyebrow nákupu <input name="buyEyebrow"></label>
+          <label>Nadpis nákupu <input name="buyTitle"></label>
+          <label>Text nákupu <textarea name="buyText" rows="4"></textarea></label>
+          <label>Label ceny <input name="priceLabel"></label>
+          <label>Cena <input name="price"></label>
+          <label>Text tlačítka <input name="cartButton"></label>
+          <label>Poznámka pod tlačítkem <textarea name="cartNote" rows="3"></textarea></label>
+          <label>Hláška bez URL <textarea name="cartMissingNote" rows="2"></textarea></label>
+          <label>Text při přesměrování <input name="cartRedirecting"></label>
+          <label>URL košíku Upgates <input name="cartUrl" placeholder="https://..."></label>
+        </section>
+
+        <section class="editor-section">
+          <h2>Footer</h2>
+          <label>Levá část <input name="footerLeft"></label>
+          <label>Pravá část <input name="footerRight"></label>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit">Uložit texty</button>
+          <span class="status" data-status></span>
+        </div>
+      </form>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
