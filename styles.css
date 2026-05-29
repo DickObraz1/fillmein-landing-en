@@ -440,17 +440,12 @@ h2 {
   white-space: nowrap;
 }
 
-.ticker span:nth-child(3n + 1) {
-  color: var(--red);
-}
-
-.ticker span:nth-child(3n + 2) {
-  color: var(--green);
-}
-
-.ticker span:nth-child(3n) {
-  color: var(--blue);
-}
+.ticker span:nth-child(6n + 1) { color: #E40303; }
+.ticker span:nth-child(6n + 2) { color: #FF8C00; }
+.ticker span:nth-child(6n + 3) { color: #F5C500; }
+.ticker span:nth-child(6n + 4) { color: #008026; }
+.ticker span:nth-child(6n + 5) { color: #004CFF; }
+.ticker span:nth-child(6n + 0) { color: #732982; }
 
 .split-section,
 .preview-section,
