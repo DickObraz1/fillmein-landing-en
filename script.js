@@ -84,7 +84,9 @@ const cartButtons = document.querySelectorAll("[data-cart-button]");
 const cartNote = document.querySelector("[data-cart-note]");
 
 cartButtons.forEach((cartButton) => {
-  cartButton.addEventListener("click", () => {
+  cartButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
     if (!landingConfig.cartUrl) {
       if (cartNote) cartNote.textContent = landingConfig.cartMissingNote;
       cartButton.focus();
