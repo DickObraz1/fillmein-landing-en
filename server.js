@@ -4,8 +4,26 @@ const { URL } = require("node:url");
 const fs = require("node:fs/promises");
 
 const rootDir = __dirname;
-const contentPath = path.join(rootDir, "content.json");
+const bundledContentPath = path.join(rootDir, "content.json");
+const volumeContentPath = "/data/content.json";
+let contentPath = bundledContentPath;
 const port = Number(process.env.PORT || 4173);
+
+async function initContentPath() {
+  try {
+    await fs.access("/data");
+    contentPath = volumeContentPath;
+    try {
+      await fs.access(volumeContentPath);
+    } catch {
+      const bundled = await fs.readFile(bundledContentPath, "utf8");
+      await fs.writeFile(volumeContentPath, bundled, "utf8");
+      console.log("První spuštění: content.json zkopírován do /data");
+    }
+  } catch {
+    contentPath = bundledContentPath;
+  }
+}
 const adminUser = process.env.ADMIN_USER || "admin";
 const adminPassword = process.env.ADMIN_PASSWORD || "";
 
@@ -145,7 +163,10 @@ const server = http.createServer(async (request, response) => {
   }
 });
 
-server.listen(port, () => {
-  console.log(`FILL ME IN server bezi na http://localhost:${port}`);
-  console.log(`Admin editor: http://localhost:${port}/admin.html`);
+initContentPath().then(() => {
+  server.listen(port, () => {
+    console.log(`FILL ME IN server bezi na http://localhost:${port}`);
+    console.log(`Admin editor: http://localhost:${port}/admin.html`);
+    console.log(`Content path: ${contentPath}`);
+  });
 });
