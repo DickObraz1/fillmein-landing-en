@@ -47,7 +47,7 @@ function applyContent(content) {
   }
 
   setText("[data-price]", landingConfig.price);
-  setText("[data-cart-button]", landingConfig.cartButton);
+  setText("button[data-cart-button]", landingConfig.cartButton);
   setText("[data-cart-note]", content.cartNote);
 }
 
