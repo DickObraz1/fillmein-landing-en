@@ -145,6 +145,13 @@ async function serveStatic(response, pathname) {
 
 const server = http.createServer(async (request, response) => {
   try {
+    const proto = request.headers["x-forwarded-proto"];
+    if (proto && proto !== "https") {
+      response.writeHead(301, { "Location": `https://${request.headers.host}${request.url}` });
+      response.end();
+      return;
+    }
+
     const { pathname } = new URL(request.url, `http://${request.headers.host}`);
 
     if (isProtectedAdminPath(pathname, request.method) && !isAuthorized(request)) {
