@@ -1,9 +1,9 @@
 const landingConfig = {
   cartUrl: "https://www.dickobraz.cz/p/fill-me-in-gay-coloring-book?addtocart=1&quantity=1&return=cart",
-  price: "399 Kč",
-  cartButton: "Vložit do košíku",
-  cartMissingNote: "Chybí Upgates URL. Doplň ji v administraci do pole URL košíku.",
-  cartRedirecting: "Přesměrovávám..."
+  price: "9 €",
+  cartButton: "Pre-order for 9 €",
+  cartMissingNote: "Cart URL missing. Add it in the admin panel under Cart URL.",
+  cartRedirecting: "Redirecting..."
 };
 
 function setText(selector, value) {
@@ -69,7 +69,7 @@ document.querySelectorAll("img[data-fallback]").forEach((image) => {
   const showFallback = () => {
     const fallback = document.createElement("div");
     fallback.className = "image-fallback";
-    fallback.textContent = `${image.dataset.fallback} nahraď obrázkem v /assets`;
+    fallback.textContent = `${image.dataset.fallback} — replace with image in /assets`;
     image.replaceWith(fallback);
   };
 

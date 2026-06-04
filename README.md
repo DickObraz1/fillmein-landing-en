@@ -77,6 +77,22 @@ Aktuálně stránka používá:
 - `Petra_3.jpg`
 - `TOMHORYCH_FULL.jpg`
 
+## Instagram carousel
+
+Carousel je připravený jako HTML šablona:
+
+```text
+http://localhost:4173/carousel.html
+```
+
+Slidy mají rozměr `1080 x 1350 px`. Jsou v souborech:
+
+- `carousel.html`
+- `carousel.css`
+- `carousel-download.js`
+
+V horní liště nebo nad každým slidem je možné stáhnout slide jako PNG nebo JPG. Součástí jsou i čtvercové promo slidy `1080 x 1080 px` v češtině a angličtině.
+
 ## Upgates košík
 
 V editoru textů vyplň `URL košíku Upgates`. Měla by to být URL, která v Upgates vloží konkrétní produkt do košíku a přesměruje zákazníka do košíku.

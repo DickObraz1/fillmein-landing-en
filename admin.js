@@ -36,20 +36,20 @@ function collectForm() {
 }
 
 async function loadContent() {
-  setStatus("Načítám...");
+  setStatus("Loading...");
   const response = await fetch("/api/content");
 
   if (!response.ok) {
-    throw new Error("Texty se nepodařilo načíst.");
+    throw new Error("Failed to load texts.");
   }
 
   populateForm(await response.json());
-  setStatus("Připraveno.");
+  setStatus("Ready.");
 }
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  setStatus("Ukládám...");
+  setStatus("Saving...");
 
   try {
     const response = await fetch("/api/content", {
@@ -61,11 +61,11 @@ form.addEventListener("submit", async (event) => {
     });
 
     if (!response.ok) {
-      throw new Error("Uložení selhalo.");
+      throw new Error("Save failed.");
     }
 
     currentContent = collectForm();
-    setStatus("Uloženo. Obnov landing page a uvidíš změny.");
+    setStatus("Saved. Refresh the landing page to see the changes.");
   } catch (error) {
     setStatus(error.message, true);
   }

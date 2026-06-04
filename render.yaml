@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: fillmein-landing
+    name: fillmein-landing-en
     runtime: node
     plan: starter
     buildCommand: npm install

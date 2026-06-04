@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FILL ME IN | Instagram Carousel</title>
+    <link rel="stylesheet" href="carousel.css">
+  </head>
+  <body>
+    <header class="toolbar">
+      <div>
+        <p class="toolbar-kicker">Instagram carousel</p>
+        <h1>FILL ME IN</h1>
+      </div>
+      <div class="toolbar-meta">
+        <span>6 carousel slidů + 1 čtverec</span>
+        <span>1080 x 1350 px</span>
+        <span>1080 x 1080 px</span>
+      </div>
+      <div class="toolbar-actions" aria-label="Stažení slidů">
+        <select data-export-select aria-label="Vybrat slide ke stažení"></select>
+        <button type="button" data-export-format="png" onclick="downloadToolbarSlide('png', this)">Stáhnout PNG</button>
+        <button type="button" data-export-format="jpg" onclick="downloadToolbarSlide('jpg', this)">Stáhnout JPG</button>
+      </div>
+      <div class="download-status" data-download-status aria-live="polite"></div>
+    </header>
+
+    <main class="carousel-board" aria-label="Instagram carousel slidy">
+      <section class="slide slide-cover" aria-label="Slide 1">
+        <div class="skyline" aria-hidden="true"></div>
+        <div class="crane" aria-hidden="true"></div>
+        <div class="slide-number">01/06</div>
+        <div class="cover-lockup">
+          <div class="copy-block">
+            <p class="eyebrow">Adult coloring book · 18+</p>
+            <h2><span>FILL</span><span>ME IN</span></h2>
+            <p class="lead">Vybarvi si hrdost. Vybarvi si touhu. Vybarvi si to po svém.</p>
+          </div>
+          <figure class="cover-frame">
+            <img src="assets/obalka.jpeg" alt="Obálka FILL ME IN">
+          </figure>
+        </div>
+        <div class="rainbow-brush brush-left" aria-hidden="true"></div>
+        <div class="brick-strip" aria-hidden="true"></div>
+      </section>
+
+      <section class="slide slide-statement" aria-label="Slide 2">
+        <div class="beam beam-top" aria-hidden="true"><span></span></div>
+        <div class="slide-number">02/06</div>
+        <p class="eyebrow">32 ilustrací od queer tvůrců</p>
+        <h2>Zavři Grindr. Otevři tohle.</h2>
+        <p class="big-copy">
+          Mužská těla, touha, hrdost a kink — bez schovávání, bez omluv.
+        </p>
+        <div class="comic-burst">
+          <span>32</span>
+          <small>stran k vybarvení</small>
+        </div>
+        <div class="brick-wall" aria-hidden="true"></div>
+      </section>
+
+      <section class="slide slide-preview" aria-label="Slide 3">
+        <div class="slide-number">03/06</div>
+        <div class="panel-title">
+          <p class="eyebrow">Ukázka z knihy</p>
+          <h2>Těla, která něco chtějí.</h2>
+        </div>
+        <div class="image-duo">
+          <figure>
+            <img src="assets/ukazka_1.png" alt="Ukázka omalovánky 1">
+          </figure>
+          <figure>
+            <img src="assets/ukazka_2.png" alt="Ukázka omalovánky 2">
+          </figure>
+        </div>
+        <p class="caption-box">Pohledy, ruce, svaly, fantazie. Černá linka čeká na tvoje barvy.</p>
+        <div class="rainbow-brush brush-right" aria-hidden="true"></div>
+      </section>
+
+      <section class="slide slide-grid" aria-label="Slide 4">
+        <div class="slide-number">04/06</div>
+        <p class="eyebrow">6 z 32</p>
+        <h2>Tohle je jen předehra.</h2>
+        <div class="sample-grid">
+          <figure><img src="assets/ukazka_3.png" alt="Ukázka omalovánky 3"></figure>
+          <figure><img src="assets/ukazka_4.png" alt="Ukázka omalovánky 4"></figure>
+          <figure><img src="assets/ukazka_5.png" alt="Ukázka omalovánky 5"></figure>
+        </div>
+        <p class="caption-box">Zbytek čeká uvnitř. A stojí za to.</p>
+      </section>
+
+      <section class="slide slide-presale" aria-label="Slide 5">
+        <div class="hook" aria-hidden="true"></div>
+        <div class="slide-number">05/06</div>
+        <p class="eyebrow">Předprodej</p>
+        <h2>Vychází 25. června 2026</h2>
+        <div class="price-card">
+          <span>Cena</span>
+          <strong>209 Kč</strong>
+          <small>Doručení do ČR · mezinárodní doprava dostupná</small>
+        </div>
+        <div class="mini-cover">
+          <img src="assets/obalka.jpeg" alt="Obálka FILL ME IN">
+        </div>
+        <div class="beam beam-bottom" aria-hidden="true"><span></span></div>
+      </section>
+
+      <section class="slide slide-cta" aria-label="Slide 6">
+        <div class="slide-number">06/06</div>
+        <p class="eyebrow">Zbývá jedno kliknutí</p>
+        <h2>Je čas si to vybarvit.</h2>
+        <p class="lead">FILL ME IN — Gay coloring book for adults.</p>
+        <a class="cta-button" href="https://www.dickobraz.cz/p/fill-me-in-gay-coloring-book">
+          Předobjednat na DickObraz.cz
+        </a>
+        <p class="url-line">fillmein.dickobraz.cz</p>
+        <div class="rainbow-brush brush-center" aria-hidden="true"></div>
+        <div class="brick-strip" aria-hidden="true"></div>
+      </section>
+
+      <section class="slide slide-square" aria-label="Square promo slide">
+        <div class="crane" aria-hidden="true"></div>
+        <div class="hook" aria-hidden="true"></div>
+        <div class="square-copy">
+          <p class="eyebrow">Předprodej</p>
+          <h2>Zavři Grindr. Otevři knihu.</h2>
+          <p class="lead">FILL ME IN: nové gay omalovánky</p>
+          <a class="cta-button square-button" href="https://www.dickobraz.cz/p/fill-me-in-gay-coloring-book">
+            TO CHCI
+          </a>
+        </div>
+        <figure class="square-cover">
+          <img src="assets/obalka.jpeg" alt="Obálka FILL ME IN">
+        </figure>
+        <div class="rainbow-brush square-brush" aria-hidden="true"></div>
+        <div class="brick-strip" aria-hidden="true"></div>
+      </section>
+
+      <section class="slide slide-square slide-square-en" aria-label="Square promo slide EN">
+        <div class="crane" aria-hidden="true"></div>
+        <div class="hook" aria-hidden="true"></div>
+        <div class="square-copy">
+          <p class="eyebrow">Presale</p>
+          <h2>Close Grindr. Open the book.</h2>
+          <p class="lead">FILL ME IN: new gay coloring book</p>
+          <a class="cta-button square-button" href="https://www.dickobraz.cz/p/fill-me-in-gay-coloring-book">
+            I WANT IT
+          </a>
+        </div>
+        <figure class="square-cover">
+          <img src="assets/obalka.jpeg" alt="FILL ME IN cover">
+        </figure>
+        <div class="rainbow-brush square-brush" aria-hidden="true"></div>
+        <div class="brick-strip" aria-hidden="true"></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+    <script src="carousel-download.js?v=7"></script>
+  </body>
+</html>

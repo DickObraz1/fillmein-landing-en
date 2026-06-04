@@ -18,7 +18,7 @@ async function initContentPath() {
     } catch {
       const bundled = await fs.readFile(bundledContentPath, "utf8");
       await fs.writeFile(volumeContentPath, bundled, "utf8");
-      console.log("První spuštění: content.json zkopírován do /data");
+      console.log("First start: content.json copied to /data");
     }
   } catch {
     contentPath = bundledContentPath;
@@ -89,12 +89,12 @@ function requestAuth(response) {
     "WWW-Authenticate": 'Basic realm="FILL ME IN admin"',
     "Content-Type": "text/plain; charset=utf-8"
   });
-  response.end("Admin vyžaduje přihlášení.");
+  response.end("Admin requires authentication.");
 }
 
 async function handleApi(request, response, pathname) {
   if (pathname !== "/api/content") {
-    sendJson(response, 404, { error: "API endpoint nenalezen." });
+    sendJson(response, 404, { error: "API endpoint not found." });
     return;
   }
 
@@ -115,7 +115,7 @@ async function handleApi(request, response, pathname) {
     return;
   }
 
-  sendJson(response, 405, { error: "Metoda není povolená." });
+  sendJson(response, 405, { error: "Method not allowed." });
 }
 
 async function serveStatic(response, pathname) {
@@ -139,7 +139,7 @@ async function serveStatic(response, pathname) {
     response.writeHead(error.code === "ENOENT" ? 404 : 500, {
       "Content-Type": "text/plain; charset=utf-8"
     });
-    response.end(error.code === "ENOENT" ? "Soubor nenalezen." : "Chyba serveru.");
+    response.end(error.code === "ENOENT" ? "File not found." : "Server error.");
   }
 }
 
@@ -166,13 +166,13 @@ const server = http.createServer(async (request, response) => {
 
     await serveStatic(response, pathname);
   } catch (error) {
-    sendJson(response, 500, { error: error.message || "Chyba serveru." });
+    sendJson(response, 500, { error: error.message || "Server error." });
   }
 });
 
 initContentPath().then(() => {
   server.listen(port, () => {
-    console.log(`FILL ME IN server bezi na http://localhost:${port}`);
+    console.log(`FILL ME IN server running at http://localhost:${port}`);
     console.log(`Admin editor: http://localhost:${port}/admin.html`);
     console.log(`Content path: ${contentPath}`);
   });
