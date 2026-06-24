@@ -1,7 +1,7 @@
 const landingConfig = {
   cartUrl: "https://www.dickobraz.com/p/fill-me-in-gay-coloring-book?addtocart=1&quantity=1&return=cart",
   price: "11 €",
-  cartButton: "Pre-order for 11 €",
+  cartButton: "Get it for 11 €",
   cartMissingNote: "Cart URL missing. Add it in the admin panel under Cart URL.",
   cartRedirecting: "Redirecting..."
 };
